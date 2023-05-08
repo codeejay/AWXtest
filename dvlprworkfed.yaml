@@ -1,0 +1,13 @@
+---
+  - name: "Corey test for Ansible."
+    hosts: localhost
+    connection: local
+    tasks:
+    -name: Install required packages
+     package:
+       name:
+         - vim-enhanced
+         - git
+         - powerline-fonts
+       state: installed
+     become: yes  
