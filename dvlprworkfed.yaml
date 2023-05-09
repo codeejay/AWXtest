@@ -1,13 +1,23 @@
 ---
-  - name: "Corey test for Ansible."
-    hosts: localhost
-    connection: local
-    tasks:
-    -name: Install required packages
-     package:
-       name:
-         - vim-enhanced
-         - git
-         - powerline-fonts
-       state: installed
-     become: yes  
+- hosts: localhost
+  become: true
+  connection: local
+ 
+  tasks:
+    - name: Install required packages
+      apt:
+        pkg: 
+          - vim-enhanced
+          - git      
+          - powerline-fonts
+          - curl
+        state: latest
+        update_cache: true
+       
+    - name: UFW - Allow SSH connections
+      community.general.ufw
+        rule: allow
+        name: OpenSSH
+         
+         
+    
