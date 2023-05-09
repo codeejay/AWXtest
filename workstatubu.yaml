@@ -5,12 +5,13 @@
  
   tasks:
     - name: Install required packages
-      apt:
-        pkg: 
+      ansible.builtin.package:
+        name: 
           - vim
           - git      
           - powerline-fonts
           - curl
+          - httpd
         state: latest
         update_cache: true
        
