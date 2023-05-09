@@ -12,6 +12,7 @@
           - powerline-fonts
           - curl
           - httpd
+          - ubuntu-restricted-extras
         state: latest
         update_cache: true
        
