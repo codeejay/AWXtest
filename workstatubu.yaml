@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  become: true
+  connection: local
+ 
+  tasks:
+    - name: Install required packages
+      apt:
+        pkg: 
+          - vim-enhanced
+          - git      
+          - powerline-fonts
+          - curl
+        state: latest
+        update_cache: true
+       
+    - name: UFW - Allow SSH connections
+      community.general.ufw
+        rule: allow
+        name: OpenSSH
