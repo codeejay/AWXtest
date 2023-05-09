@@ -7,7 +7,7 @@
     - name: Install required packages
       apt:
         pkg: 
-          - vim-enhanced
+          - vim
           - git      
           - powerline-fonts
           - curl
